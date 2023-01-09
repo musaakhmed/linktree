@@ -1,19 +1,12 @@
 import Image from 'next/image'
+import Header from '../components/Header'
 import LinkCard from '../components/LinkCard'
 import data from '../data.json'
 
 export default function Home() {
     return (
-        <div className='flex flex-col items-center justify-center mt-12 mx-auto opacity-90 px-8'>
-            <Image
-                className='rounded-full'
-                src={data.avatar}
-                width={96}
-                height={96}
-                alt={data.name}
-            />
-            <h1 className='font-semibold py-2 text-xl mb-8'>{data.name}</h1>
-
+        <div className='bg-gradient-to-b from-blue-50 to-slate-50'>
+            <Header name={data.name} avatar={data.avatar} />
             {data.links.map((link) => (
                 <LinkCard key={link.url} {...link} />
             ))}
