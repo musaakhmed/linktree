@@ -5,7 +5,7 @@ import data from '../data.json'
 
 export default function Home() {
     return (
-        <div className='bg-gradient-to-b from-blue-50 to-slate-50'>
+        <div className='bg-gradient-to-tr h-screen from-[#DAC4B7] via-[#F4EEAA] to-[#B5F1D2]'>
             <Header name={data.name} avatar={data.avatar} />
             {data.links.map((link) => (
                 <LinkCard key={link.url} {...link} />
