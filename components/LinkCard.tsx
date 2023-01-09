@@ -12,10 +12,21 @@ const LinkCard = ({
     return (
         <a
             href={url}
-            className='flex items-center h-16 mb-4 border border-gray-300 w-full rounded hover:scale-105 transition-all duration-200 ease-out'
+            className='flex group items-center h-16 mb-4 border border-gray-300 w-full rounded hover:scale-105 transition-all duration-200 ease-out justify-between'
         >
-            {/* <Image src={image} width={40} height={40} alt='' /> */}
-            <span className=''>{title}</span>
+            {image && (
+                <Image
+                    src={image}
+                    width={58}
+                    height={58}
+                    alt={title}
+                    className='rounded-lg p-1'
+                />
+            )}
+            <span className='text-sm'>{title}</span>
+            <div className=' group-hover:opacity-100 p-2 opacity-0 hover:opacity-100 transition-all duration-150 ease-in-out'>
+                SHR
+            </div>
         </a>
     )
 }
