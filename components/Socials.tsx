@@ -27,7 +27,7 @@ const Socials = () => {
                         <a
                             key={social.url}
                             href={social.url}
-                            className='hover:scale-110 duration-200 ease-in-out'
+                            className='hover:scale-110 duration-200 ease-out'
                         >
                             <LinkedinIcon />
                         </a>

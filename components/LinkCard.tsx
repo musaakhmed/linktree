@@ -13,7 +13,7 @@ const LinkCard = ({
         <div className='px-8'>
             <a
                 href={url}
-                className='flex bg-amber-50 group items-center h-10 mb-4 border border-gray-300 w-90% rounded-lg shadow hover:scale-105 transition-all duration-200 ease-out justify-between mx-auto max-w-3xl'
+                className='flex bg-amber-50 group items-center h-10 mb-2 border border-gray-200 w-90% rounded-lg shadow hover:scale-105 transition-all duration-200 ease-out justify-between mx-auto max-w-3xl'
             >
                 <Image
                     src={image}
