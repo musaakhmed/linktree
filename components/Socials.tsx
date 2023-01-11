@@ -1,6 +1,7 @@
 import data from '../data.json'
 
 import {
+    EmailIcon,
     GitHubIcon,
     InstagramIcon,
     LinkedinIcon,
@@ -9,7 +10,7 @@ import {
 
 const Socials = () => {
     return (
-        <section className='flex items-center justify-center gap-1'>
+        <section className='flex items-center justify-center mt-6 gap-1'>
             {data.socials.map((social) => {
                 if (social.url.includes('twitter')) {
                     return (
@@ -41,6 +42,17 @@ const Socials = () => {
                             className='hover:scale-110 duration-200 ease-in-out'
                         >
                             <InstagramIcon />
+                        </a>
+                    )
+                }
+                if (social.url.includes('mail')) {
+                    return (
+                        <a
+                            key={social.url}
+                            href={social.url}
+                            className='hover:scale-110 duration-200 ease-in-out'
+                        >
+                            <EmailIcon />
                         </a>
                     )
                 }

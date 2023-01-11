@@ -2,6 +2,7 @@ import Image from 'next/image'
 import Header from '../components/Header'
 import LinkCard from '../components/LinkCard'
 import Socials from '../components/Socials'
+import SharePopup from '../components/ShareThis/SharePopup'
 import data from '../data.json'
 
 export default function Home() {
@@ -12,6 +13,7 @@ export default function Home() {
                 <LinkCard key={link.url} {...link} />
             ))}
             <Socials />
+            <SharePopup />
         </div>
     )
 }
