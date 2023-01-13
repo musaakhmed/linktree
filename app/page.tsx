@@ -1,4 +1,3 @@
-import Image from 'next/image'
 import Header from '../components/Header'
 import LinkCard from '../components/LinkCard'
 import Socials from '../components/Socials'
@@ -13,7 +12,6 @@ export default function Home() {
                 <LinkCard key={link.url} {...link} />
             ))}
             <Socials />
-            <SharePopup />
         </div>
     )
 }

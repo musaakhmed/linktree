@@ -70,7 +70,7 @@ const SharePopup = () => {
             >
                 <ShareLink />
                 <span>short link here</span>
-                <a>Copy</a>
+                <a href=''>Copy</a>
             </a>
         </div>
     )

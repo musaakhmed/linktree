@@ -25,7 +25,7 @@ const LinkCard = ({
 
                 <span className='text-sm'>{title}</span>
 
-                <div className=' group-hover:opacity-100 p-2 opacity-0 hover:opacity-100 transition-all duration-500 ease-in-out'>
+                <button className=' group-hover:opacity-100 p-2 opacity-0 hover:opacity-100 transition-all duration-500 ease-in-out'>
                     <Image
                         src='/share.png'
                         width={24}
@@ -33,7 +33,7 @@ const LinkCard = ({
                         alt=''
                         className='opacity-80 bg-gray-300 p-1 rounded-full'
                     />
-                </div>
+                </button>
             </a>
         </div>
     )
