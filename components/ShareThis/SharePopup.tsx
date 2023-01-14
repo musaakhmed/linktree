@@ -18,7 +18,10 @@ const SharePopup = ({
 }) => {
     if (!popupOpen) return null
     return (
-        <div className='fixed inset-0 bg-slate-900 bg-opacity-50 backdrop-blur-sm flex justify-center items-center z-50'>
+        <div
+            onClick={onClose}
+            className='fixed inset-0 bg-slate-900 bg-opacity-50 backdrop-blur-sm flex justify-center items-center z-50'
+        >
             <div className='mx-auto w-4/6 sm:max-w-xs text-sm sm:text-base py-6 px-4 rounded-xl bg-white flex flex-col gap-1 justify-center'>
                 <div className='flex pb-4 justify-between items-center px-2'>
                     <div></div>
