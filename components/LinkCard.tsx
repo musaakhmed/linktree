@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import Image from 'next/image'
 import SharePopup from './ShareThis/SharePopup'
+import Backdrop from './ShareThis/Backdrop'
 
 const LinkCard = ({
     title,
@@ -17,7 +18,7 @@ const LinkCard = ({
 
     const popupCloseHandler = () => setShowModal(false)
     return (
-        <div className='px-8'>
+        <div className='px-8 z-30'>
             <div className='flex bg-amber-50 group items-center h-10 mb-2 border border-gray-200 w-90% rounded-lg shadow hover:scale-105 transition-all duration-200 ease-out  mx-auto max-w-3xl'>
                 <a
                     href={url}
@@ -48,6 +49,8 @@ const LinkCard = ({
                     />
                 </button>
             </div>
+
+            <Backdrop onClose={popupCloseHandler} popupOpen={showModal} />
             <SharePopup
                 url={url}
                 title={title}

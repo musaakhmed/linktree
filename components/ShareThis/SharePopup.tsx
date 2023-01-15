@@ -1,16 +1,16 @@
-import data from '../../data.json'
 import Image from 'next/image'
+import Backdrop from './Backdrop'
 
 import {
     ShareArrow,
     ShareCross,
-    ShareEmail,
     ShareFacebook,
     ShareLink,
     ShareLinkedin,
     ShareTwitter,
     ShareWhatsapp,
 } from './ShareIcons'
+import ShareToast from './ShareToast'
 
 const SharePopup = ({
     popupOpen,
@@ -25,11 +25,8 @@ const SharePopup = ({
 }) => {
     if (!popupOpen) return null
     return (
-        <div
-            onClick={onClose}
-            className='fixed inset-0 bg-slate-900 bg-opacity-50 backdrop-blur-sm flex justify-center items-center z-50'
-        >
-            <div className='mx-auto w-4/6 sm:max-w-xs text-sm sm:text-base py-6 px-4 rounded-xl bg-white flex flex-col gap-1 justify-center'>
+        <div className='fixed flex justify-center items-center z-50 w-full'>
+            <div className='mx-auto w-4/6 sm:max-w-xs text-sm sm:text-base py-6 px-4 rounded-xl bg-white flex-col gap-1 flex  '>
                 <div className='flex pb-4 justify-between items-center px-2'>
                     <div></div>
                     <div className=''>Share this link</div>
@@ -103,24 +100,26 @@ const SharePopup = ({
                         <ShareArrow />
                     </div>
                 </a>
-                <a href={`mailto:?&subject=${title}&body=${url}`} className=''>
-                    <div className='flex justify-between items-center hover:bg-slate-100 transition-all duration-300 ease-in-out px-2 py-2 rounded'>
-                        <div className='flex gap-2'>
-                            <ShareEmail />
-                            Share via email{' '}
-                        </div>
-                        <ShareArrow />
-                    </div>
-                </a>
 
-                <a
-                    href=''
+                <button
+                    onClick={() =>
+                        navigator.clipboard.writeText(url).then(
+                            () => {},
+                            () => {
+                                /* clipboard write failed */
+                            }
+                        )
+                    }
                     className='flex justify-between items-center border rounded-lg mt-4 px-4 py-3 mx-1 hover:bg-slate-100 transition-all duration-300 ease-in-out'
                 >
                     <ShareLink />
-                    <span>short link here</span>
-                    <button>Copy</button>
-                </a>
+                    <span className='text-md text-slate-700 text-ellipsis whitespace-nowrap overflow-hidden px-5'>
+                        {url}
+                    </span>
+                    <span className='px-2 py-1 hover:bg-opacity-100 bg-opacity-80 bg-blue-600 rounded-lg text-white duration-100 transition-all ease-linear'>
+                        Copy
+                    </span>
+                </button>
             </div>
         </div>
     )
