@@ -48,7 +48,12 @@ const LinkCard = ({
                     />
                 </button>
             </div>
-            <SharePopup onClose={popupCloseHandler} popupOpen={showModal} />
+            <SharePopup
+                url={url}
+                title={title}
+                onClose={popupCloseHandler}
+                popupOpen={showModal}
+            />
         </div>
     )
 }

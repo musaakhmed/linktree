@@ -1,3 +1,6 @@
+import data from '../../data.json'
+import Image from 'next/image'
+
 import {
     ShareArrow,
     ShareCross,
@@ -12,9 +15,13 @@ import {
 const SharePopup = ({
     popupOpen,
     onClose,
+    url,
+    title,
 }: {
     popupOpen: boolean
     onClose: any
+    url: string
+    title: string
 }) => {
     if (!popupOpen) return null
     return (
@@ -31,7 +38,10 @@ const SharePopup = ({
                     </button>
                 </div>
 
-                <a href='' className=''>
+                <a
+                    href={`https://www.facebook.com/sharer/sharer.php?u=${url}`}
+                    className=''
+                >
                     <div className='flex justify-between items-center hover:bg-slate-100 transition-all duration-300 ease-in-out px-2 py-2 rounded'>
                         <div className='flex gap-2'>
                             <ShareFacebook />
@@ -40,7 +50,10 @@ const SharePopup = ({
                         <ShareArrow />
                     </div>
                 </a>
-                <a href='' className=''>
+                <a
+                    href={`https://www.linkedin.com/shareArticle?url=${url}&title=${title}`}
+                    className=''
+                >
                     <div className='flex justify-between items-center hover:bg-slate-100 transition-all duration-300 ease-in-out px-2 py-2 rounded'>
                         <div className='flex gap-2'>
                             <ShareLinkedin />
@@ -49,7 +62,10 @@ const SharePopup = ({
                         <ShareArrow />
                     </div>
                 </a>
-                <a href='' className=''>
+                <a
+                    href={`https://twitter.com/intent/tweet?url=${url}&text=${title}&via=punhan`}
+                    className=''
+                >
                     <div className='flex justify-between items-center hover:bg-slate-100 transition-all duration-300 ease-in-out px-2 py-2 rounded'>
                         <div className='flex gap-2'>
                             <ShareTwitter />
@@ -58,7 +74,10 @@ const SharePopup = ({
                         <ShareArrow />
                     </div>
                 </a>
-                <a href='' className=''>
+                <a
+                    href={`https://api.whatsapp.com/send?text=${title}%0a${url}`}
+                    className=''
+                >
                     <div className='flex justify-between items-center hover:bg-slate-100 transition-all duration-300 ease-in-out px-2 py-2 rounded'>
                         <div className='flex gap-2'>
                             <ShareWhatsapp />
@@ -67,7 +86,24 @@ const SharePopup = ({
                         <ShareArrow />
                     </div>
                 </a>
-                <a href='' className=''>
+                <a
+                    href={`https://t.me/share/url?url=${url}&text=${title}`}
+                    className=''
+                >
+                    <div className='flex justify-between items-center hover:bg-slate-100 transition-all duration-300 ease-in-out px-2 py-2 rounded'>
+                        <div className='flex gap-2'>
+                            <Image
+                                alt=''
+                                width={28}
+                                height={28}
+                                src='./assets/ShareTelegram.svg'
+                            />
+                            Share via Telegram{' '}
+                        </div>
+                        <ShareArrow />
+                    </div>
+                </a>
+                <a href={`mailto:?&subject=${title}&body=${url}`} className=''>
                     <div className='flex justify-between items-center hover:bg-slate-100 transition-all duration-300 ease-in-out px-2 py-2 rounded'>
                         <div className='flex gap-2'>
                             <ShareEmail />
