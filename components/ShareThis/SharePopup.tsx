@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import toast, { Toaster } from 'react-hot-toast'
 import Backdrop from './Backdrop'
 
 import {
@@ -10,7 +11,6 @@ import {
     ShareTwitter,
     ShareWhatsapp,
 } from './ShareIcons'
-import ShareToast from './ShareToast'
 
 const SharePopup = ({
     popupOpen,
@@ -23,9 +23,14 @@ const SharePopup = ({
     url: string
     title: string
 }) => {
+    const linkCopied = () => toast.success('Link copied to clipboard!')
+
     if (!popupOpen) return null
     return (
         <div className='fixed inset-0 flex justify-center items-center '>
+            <div>
+                <Toaster />
+            </div>
             <Backdrop onClose={onClose} popupOpen={popupOpen} />
             <div className='w-4/6 sm:max-w-xs text-sm sm:text-base py-6 px-4 rounded-xl bg-white flex-col gap-1 flex z-50 '>
                 <div className='flex pb-4 justify-between items-center px-2'>
@@ -104,12 +109,11 @@ const SharePopup = ({
 
                 <button
                     onClick={() =>
-                        navigator.clipboard.writeText(url).then(
-                            () => {},
-                            () => {
+                        navigator.clipboard
+                            .writeText(url)
+                            .then(linkCopied, () => {
                                 /* clipboard write failed */
-                            }
-                        )
+                            })
                     }
                     className='flex justify-between items-center border rounded-lg mt-4 px-4 py-3 mx-1 hover:bg-slate-100 transition-all duration-300 ease-in-out'
                 >

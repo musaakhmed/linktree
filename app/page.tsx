@@ -1,9 +1,7 @@
 import Header from '../components/Header'
 import LinkCard from '../components/LinkCard'
 import Socials from '../components/Socials'
-import ShareToast from '../components/ShareThis/ShareToast'
 import data from '../data.json'
-import Backdrop from '../components/ShareThis/Backdrop'
 
 export default function Home() {
     return (
@@ -13,7 +11,6 @@ export default function Home() {
                 <LinkCard key={link.url} {...link} />
             ))}
             <Socials />
-            <ShareToast />
         </div>
     )
 }
