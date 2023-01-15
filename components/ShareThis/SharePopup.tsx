@@ -8,7 +8,6 @@ import {
     ShareFacebook,
     ShareLink,
     ShareLinkedin,
-    ShareTelegram,
     ShareTwitter,
     ShareWhatsapp,
 } from './ShareIcons'
