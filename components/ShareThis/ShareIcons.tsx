@@ -127,6 +127,7 @@ export const ShareEmail = () => {
         </svg>
     )
 }
+
 export const ShareLink = () => {
     return (
         <svg
