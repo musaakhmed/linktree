@@ -41,10 +41,10 @@ const LinkCard = ({
                 >
                     <Image
                         src='/share.png'
-                        width={24}
-                        height={24}
+                        width={32}
+                        height={32}
                         alt=''
-                        className='opacity-80 bg-gray-300 p-1 rounded-full'
+                        className='group-hover:opacity-80 opacity-0 hover:bg-slate-300 hover:opacity-80 p-1 rounded-full transition-all duration-200 ease-linear'
                     />
                 </button>
             </div>
