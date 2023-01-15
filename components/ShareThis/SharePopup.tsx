@@ -25,8 +25,9 @@ const SharePopup = ({
 }) => {
     if (!popupOpen) return null
     return (
-        <div className='fixed flex justify-center items-center z-50 w-full'>
-            <div className='mx-auto w-4/6 sm:max-w-xs text-sm sm:text-base py-6 px-4 rounded-xl bg-white flex-col gap-1 flex  '>
+        <div className='fixed inset-0 flex justify-center items-center '>
+            <Backdrop onClose={onClose} popupOpen={popupOpen} />
+            <div className='w-4/6 sm:max-w-xs text-sm sm:text-base py-6 px-4 rounded-xl bg-white flex-col gap-1 flex z-50 '>
                 <div className='flex pb-4 justify-between items-center px-2'>
                     <div></div>
                     <div className=''>Share this link</div>

@@ -50,7 +50,7 @@ const LinkCard = ({
                 </button>
             </div>
 
-            <Backdrop onClose={popupCloseHandler} popupOpen={showModal} />
+            {/* <Backdrop onClose={popupCloseHandler} popupOpen={showModal} /> */}
             <SharePopup
                 url={url}
                 title={title}
