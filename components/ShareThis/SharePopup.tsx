@@ -23,7 +23,11 @@ const SharePopup = ({
     url: string
     title: string
 }) => {
-    const linkCopied = () => toast.success('Link copied to clipboard!')
+    const linkCopied = () =>
+        toast.success('Link copied to clipboard!', {
+            duration: 4000,
+            position: 'bottom-left',
+        })
 
     if (!popupOpen) return null
     return (
